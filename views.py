@@ -8,9 +8,9 @@ bootstrap = Bootstrap(app)
 def index():
     return send_file('templates/index.html')
 
-@app.route('/<videoname>')
+@app.route('/videopage')
 def video():
-    return render_template(url_for('/<videoname>', VideoName = videoname))
+    return render_template("videopage.html")
 
 
 if __name__ == '__main__':
