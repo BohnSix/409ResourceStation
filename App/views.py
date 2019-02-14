@@ -1,10 +1,9 @@
-from flask import blueprints
-from manager import app
+from flask import Blueprint
 
 
-blue = blueprints('first_blue', __name__)
+blue = Blueprint('first_blue', __name__)
 
 
-@app.route('/')
+@blue.route('/')
 def hello_world():
-    return "Hello world"
+    return "Hello Flask"
