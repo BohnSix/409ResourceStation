@@ -35,3 +35,8 @@ def logout():
     resp = redirect(url_for('first_blue.home'))
     resp.delete_cookie('user')
     return resp
+
+
+@blue.route('/mine/')
+def mine():
+    return render_template('mine.html')

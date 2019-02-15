@@ -1,0 +1,17 @@
+{% extends 'index.html' %}
+
+{% block header %}
+{{ super() }}
+<h1>This is a big head</h1>
+{% endblock %}
+
+{% block extCSS %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/content.css') }}">
+{% endblock %}
+
+{% block content %}
+{{ super() }}
+<h3>Demasia!</h3>
+{% include 'content.html' %}
+{% endblock %}
