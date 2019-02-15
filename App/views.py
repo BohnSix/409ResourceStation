@@ -40,3 +40,8 @@ def logout():
 @blue.route('/mine/')
 def mine():
     return render_template('mine.html')
+
+
+@blue.route('/hellobs/')
+def hello_bs():
+    return render_template('hello_bootstrap.html')
