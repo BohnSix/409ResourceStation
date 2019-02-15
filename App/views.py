@@ -6,7 +6,7 @@ blue = Blueprint('first_blue', __name__)
 
 @blue.route('/')
 def hello_world():
-    return "Hello Flask"
+    return render_template('index.html')
 
 
 @blue.route('/home/')
