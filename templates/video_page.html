@@ -2,7 +2,8 @@
 
 
 {% block extCSS %}
-<!--<style>video {width: 100%;height: auto;}</style>-->
+{% super() %}
+<style>video {width: 100%;height: auto;}</style>
 {% endblock %}
 
 {% block navbar %}
@@ -52,9 +53,8 @@
 </nav>
 {% endblock %}
 {% block content%}
-<video width="400" controls autoplay="false">
-<source src="/static/A.mp4" type="video/mp4">
-<source src="/static/A.ogg" type="video/ogg">
+<video width="400" controls poster="/static/cover.jpg">
+<source src="/static/{{ title }}.mp4" type="video/mp4" >
 Your browser does not support HTML5 video.
 </video>
 
