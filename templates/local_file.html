@@ -56,9 +56,6 @@
     </nav>
 {% endblock %}
 {% block content %}
-    <video width="400" controls poster="{{ url_for('cover', filename=title) }}.jpg">
-        <source src="{{ url_for('videos', filename=title) }}.mp4" type="video/mp4">
-        Your browser does not support HTML5 video.
-    </video>
-
+    <input type="file" accept="video/*"/>
+    <video controls autoplay></video>
 {% endblock %}
