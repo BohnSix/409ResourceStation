@@ -4,7 +4,6 @@ import time
 import requests
 from lxml import etree
 from loguru import logger
-import os
 from urllib.request import urlretrieve
 import json
 
