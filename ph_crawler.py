@@ -54,19 +54,18 @@ def detail_page(vk):
         if 'quality' in dic.keys() and dic.get('videoUrl'):
             logger.info('%s %s' % (dic.get('quality'), dic.get('videoUrl')))
             try:
-                download(dic.get('videoUrl'), title, dic.get('format'))
-                download(img_url, title, img_url.split('.')[-1])
+                download(dic.get('videoUrl'), title, dic.get('format'), "videos")
+                download(img_url, title, img_url.split('.')[-1], "cover")
                 break
             except Exception as err:
                 logger.error(err)
 
 
 # 根据提取到的网址下载
-def download(url, title, filetype):
+def download(url, title, filetype, where):
     start_time = time.time()
-    if not (os.path.exists(r'/{}'.format(filetype))):
-        os.makedirs(r'/{}'.format(filetype))
-    urlretrieve(url, r'/{}/{}.{}'.format(filetype, title, filetype))
+
+    urlretrieve(url, r'/{}/{}.{}'.format(where, title, filetype))
     end_time = time.time()
     logger.info("{}下载完成，用时{}秒".format(title, end_time - start_time))
 
