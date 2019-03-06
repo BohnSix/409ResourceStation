@@ -80,7 +80,13 @@ if __name__ == '__main__':
 
     logger.add("/logs/%s.log" % __file__.rstrip('.py'), format="{time:MM-DD HH:mm:ss}{level}{message}")
 
-    keyword = 'aizawa minami'
-    vks = search_on_ph(keyword)
-    for vk in vks:
+    choose = input("1——搜索   2——下载。请输入数字：")
+    if int(choose) == 1:
+
+        keyword = input("告诉我你想找谁：") or 'aizawa minami'
+        vks = search_on_ph(keyword)
+        for vk in vks:
+            detail_page(vk)
+    if int(choose) == 2:
+        vk = input("相对URL是:")
         detail_page(vk)
